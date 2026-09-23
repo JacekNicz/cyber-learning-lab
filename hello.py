@@ -1,1 +1,2 @@
-print("Witaj, zaczynam naukę cyberbezpieczeństwa! zmiana testowa")
+name = 'Jaca'
+print('witaj, ' + name + '!')
