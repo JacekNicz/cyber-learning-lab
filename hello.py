@@ -1,0 +1,1 @@
+print("Witaj, zaczynam naukę cyberbezpieczeństwa!")
