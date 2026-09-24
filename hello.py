@@ -1,16 +1,23 @@
-logowania = [1, 0, 1, 1, 0, 1]
+logowania = [
+    {"uzytkownik": "jan.kowalski", "ip": "203.0.113.10", "wynik": "nieudane"},
+    {"uzytkownik": "anna.nowak", "ip": "198.51.100.25", "wynik": "udane"},
+    {"uzytkownik": "jan.kowalski", "ip": "203.0.113.10", "wynik": "nieudane"},
+    {"uzytkownik": "piotr.zielinski", "ip": "192.0.2.44", "wynik": "nieudane"},
+    {"uzytkownik": "anna.nowak", "ip": "198.51.100.25", "wynik": "udane"}
+]
 successful_logins = []
 podejrzane_logowania = []
 
-for wynik in logowania:
-    if wynik == 1:
-        podejrzane_logowania.append(wynik)
+for logowanie in logowania:
+    if logowanie["wynik"] == "nieudane":
+        podejrzane_logowania.append(logowanie)
     else:
-        successful_logins.append(wynik)
+        successful_logins.append(logowanie)
 
 print("Podejrzane logowania:", podejrzane_logowania)
 print("Nieudane logowania:", len(podejrzane_logowania))
 print("Udane logowania:", len(successful_logins))
+
 if len(podejrzane_logowania) >= 5:
     print("ALERT: wysoka liczba nieudanych logowań")
 elif len(podejrzane_logowania) == 4:
