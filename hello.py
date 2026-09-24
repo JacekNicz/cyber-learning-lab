@@ -1,4 +1,4 @@
-logowania = [0, 0, 1, 1, 0, 1]
+logowania = [1, 0, 1, 1, 0, 1]
 failed_logins = 0
 
 for wynik in logowania:
