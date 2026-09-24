@@ -9,7 +9,6 @@ for wynik in logowania:
         successful_logins.append(wynik)
 
 print("Podejrzane logowania:", podejrzane_logowania)
-print("Liczba elementów na liście:", len(podejrzane_logowania))
 print("Nieudane logowania:", len(podejrzane_logowania))
 print("Udane logowania:", len(successful_logins))
 if len(podejrzane_logowania) >= 5:
