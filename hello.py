@@ -1,4 +1,4 @@
-logowania = [1, 1, 1, 1, 1]
+logowania = [1, 0, 1, 1, 0, 1]
 failed_logins = 0
 successful_logins = 0
 podejrzane_logowania = []
