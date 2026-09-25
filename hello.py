@@ -14,6 +14,16 @@ for logowanie in logowania:
     else:
         successful_logins.append(logowanie)
 
+nieudane_ip = []
+
+for podejrzane_logowanie in podejrzane_logowania:
+    ip = logowanie["ip"]
+
+    if ip not in nieudane_ip:
+        nieudane_ip.append(ip)
+
+print("Adresy IP z nieudanymi logowaniami:", nieudane_ip)        
+
 print("Podejrzane logowania:", podejrzane_logowania)
 print("Nieudane logowania:", len(podejrzane_logowania))
 print("Udane logowania:", len(successful_logins))
