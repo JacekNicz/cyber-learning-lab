@@ -5,6 +5,7 @@ logowania = [
     {"uzytkownik": "piotr.zielinski", "ip": "192.0.2.44", "wynik": "nieudane"},
     {"uzytkownik": "anna.nowak", "ip": "198.51.100.25", "wynik": "udane"},
     {"uzytkownik": "jan.kowalski", "ip": "203.0.113.10", "wynik": "nieudane"},
+    {"uzytkownik": "anna.nowak", "ip": "203.0.113.10", "wynik": "nieudane"},
 ]
 successful_logins = []
 podejrzane_logowania = []
@@ -49,6 +50,10 @@ for uzytkownik, liczba_nieudanych in nieudane_na_uzytkownika.items():
 for ip, liczba_nieudanych in nieudane_na_ip.items():
     if liczba_nieudanych >= 3:
         print("ALERT: wiele nieudanych logowań z IP:", ip)
+        
+for ip, uzytkownicy in uzytkownicy_na_ip.items():
+    if len(uzytkownicy) >= 2:
+        print(f"ALERT: IP {ip} próbuje logować się na wiele kont: {uzytkownicy}")
 
 print("Szczegóły podejrzanych logowań:")
 
