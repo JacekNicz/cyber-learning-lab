@@ -18,10 +18,17 @@ for logowanie in logowania:
 nieudane_ip = []
 nieudane_na_uzytkownika = {}
 nieudane_na_ip = {}
+uzytkownicy_na_ip = {}
 
 for podejrzane_logowanie in podejrzane_logowania:
     ip = podejrzane_logowanie["ip"]
     uzytkownik = podejrzane_logowanie["uzytkownik"]
+
+    if ip not in uzytkownicy_na_ip:
+        uzytkownicy_na_ip[ip] = []
+
+    if uzytkownik not in uzytkownicy_na_ip[ip]:
+        uzytkownicy_na_ip[ip].append(uzytkownik)
 
     if ip not in nieudane_ip:
         nieudane_ip.append(ip)
@@ -52,9 +59,11 @@ for podejrzane_logowanie in podejrzane_logowania:
         f'Wynik: {podejrzane_logowanie["wynik"]}'
     )
 
+
 print(f'Nieudane logowania według użytkownika: {nieudane_na_uzytkownika}')
 print(f'Nieudane logowania według IP: {nieudane_na_ip}')
-print(f'Adresy IP z nieudanymi logowaniami: {nieudane_ip}')        
+print(f'Adresy IP z nieudanymi logowaniami: {nieudane_ip}') 
+print(f'Użytkownicy z nieudanymi logowaniami według IP: {uzytkownicy_na_ip}')       
 # print("Podejrzane logowania:", podejrzane_logowania)
 print(f'Nieudane logowania: {len(podejrzane_logowania)}')
 print(f'Udane logowania: {len(successful_logins)}')
